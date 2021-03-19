@@ -1,7 +1,9 @@
 # fileShareByIP
  Simple IP whitelisted web FTP (Read only)
 
-![](https://i.imgur.com/nbydEWR.jpg)
+![](https://i.imgur.com/9DFZzZ2.jpeg)
+
+![](https://i.imgur.com/rrY6mKA.jpg)
 
 ### Usage
 **Host server**
