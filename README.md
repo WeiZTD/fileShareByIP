@@ -1,2 +1,17 @@
 # fileShareByIP
- Simple IP whitelisted web FTP
+ Simple IP whitelisted web FTP (Read only)
+
+![](https://i.imgur.com/nbydEWR.jpg)
+
+### Usage
+**Host server**
+
+```fileShareByIP.exe -dir = "PATH/TO/SHARE"```
+
+**IP whitelist control page (admin)**
+
+```:8080/admin```
+
+**Browse files and folders**
+
+```:8080/``` auto redirect to ```:8080/file```
