@@ -35,14 +35,14 @@
                 <th>Description</th>
             </tr>
         </thead>
-        {{if .Users}}
-        {{range $.Users}}
+        {{if .whitelist}}
+        {{range $ip, $authInfo := .whitelist}}
         <tbody>
             <tr>
-                <td>{{.IP}}</td>
-                <td>{{.Allow}}</td>
-                <td>{{.IsAdmin}}</td>
-                <td>{{.Description}}</td>
+                <td>{{$ip}}</td>
+                <td>{{$authInfo.Allow}}</td>
+                <td>{{$authInfo.IsAdmin}}</td>
+                <td>{{$authInfo.Description}}</td>
             </tr>
         </tbody>
         {{end}}
