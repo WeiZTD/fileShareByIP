@@ -3,19 +3,38 @@
 
 ![](https://i.imgur.com/9DFZzZ2.jpeg)
 
-![](https://i.imgur.com/rrY6mKA.jpg)
 
 ## Usage
-**Host server**
+### Host a server
 
-```fileShareByIP.exe -dir="PATH/TO/SHARE"```
+```fileShareByIP.exe  -dir="PATH/TO/DIR"```
 
-**IP whitelist control page (admin)**
+Show help message
 
-```:8080/admin```
+```-help,-?```
 
-**Browse files and folders**
+Rirectory to share directory (Required)
 
-```:8080/file```
+```-dir="PATH/TO/DIR"```
 
-```:8080/``` will redirect to ```:8080/file```
+Allow users to upload file 
+
+```-upd=true```
+
+Listen at specific port
+
+```-p=number```
+
+### Browse files and folders
+
+```ip:port/file```
+
+```/``` will redirect to ```/file```
+
+### Upload file
+
+```@ip:port/upload```
+
+### IP whitelist control page (admin)
+
+```@ip:port/admin```
