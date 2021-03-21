@@ -1,27 +1,30 @@
 # fileShareByIP
- Simple IP whitelisted web FTP (Read only)
+ Simple IP whitelisted web FTP
 
 ![](https://i.imgur.com/9DFZzZ2.jpeg)
 
 
-## Usage
-### Host a server
+# Usage
 
-```fileShareByIP.exe  -dir="PATH/TO/DIR"```
+## Host a read only server
 
-show help message
+```fileShareByIP.exe -dir="PATH/TO/DIR"```
+
+## Parameters
+
+### Show help message
 
 ```-help,-?```
 
-directory to share(Required)
+### Directory to share (required)
 
 ```-dir="PATH/TO/DIR"```
 
-allow users to upload file 
+### Allow user to upload file
 
 ```-upd=true```
 
-listen at specific port
+### Listen at specific port
 
 ```-p=number```
 
