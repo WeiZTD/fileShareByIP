@@ -2,7 +2,9 @@ package handler
 
 import (
 	"fileShareByIP/middleware"
+	"fmt"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 
@@ -11,6 +13,31 @@ import (
 
 func RedirectToFile(c *gin.Context) {
 	c.Redirect(http.StatusPermanentRedirect, "/file")
+}
+
+func FileUploadPage(c *gin.Context) {
+	c.HTML(http.StatusOK, "upload.tmpl", nil)
+}
+
+func UploadFile(c *gin.Context) {
+
+	file, err := c.FormFile("File")
+	if err != nil {
+		c.String(http.StatusBadRequest, fmt.Sprint(err.Error()))
+		return
+	}
+	shareDir, _ := c.Get("shareDir")
+	filePath := shareDir.(string) + "/" + file.Filename
+	if _, err := os.Stat(filePath); !os.IsNotExist(err) {
+		c.HTML(http.StatusBadRequest, "upload.tmpl", gin.H{"alert": "ERROR: file already exist"})
+		return
+	}
+
+	if err := c.SaveUploadedFile(file, filePath); err != nil {
+		c.HTML(http.StatusBadRequest, "upload.tmpl", gin.H{"alert": fmt.Sprintf("ERROR: %v", fmt.Sprint(err.Error()))})
+		return
+	}
+	c.HTML(http.StatusOK, "upload.tmpl", gin.H{"alert": fmt.Sprintf("%s uploaded!", file.Filename)})
 }
 
 func AdminIndex(c *gin.Context) {

@@ -1,0 +1,43 @@
+{{ define "upload.tmpl" }}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css"
+        integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
+</head>
+
+<body>
+    <style scoped="">
+        .button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+        .button-secondary {
+            background: rgb(60, 163, 194);
+        }
+    </style>
+    <br>
+    <p>
+    <h3>Click on the "Choose File" button to upload a file:</h3>
+
+    <form class="pure-form" action="/upload" enctype="multipart/form-data" method="post">
+        <input type="file" name="File">
+        <input type="submit" class="pure-button pure-button-primary">
+    </form>
+    </p>
+    <br>
+    <p>
+        <button class="button-secondary pure-button" onclick="window.location.href='/file'">Return to file</button>
+    </p>
+
+
+    {{if .alert}}
+    <script>alert({{.alert }})</script>
+    {{end}}
+</body>
+
+</html>
+{{end}}

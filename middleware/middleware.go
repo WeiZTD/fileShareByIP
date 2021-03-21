@@ -55,11 +55,10 @@ func LoadWhitelist() error {
 	}
 
 	whitelistJSON, err := os.ReadFile("whitelist.json")
-	if err == os.ErrNotExist {
+	if err != nil {
 		return err
 	}
-	err = json.Unmarshal(whitelistJSON, &Whitelist)
-	if err != nil {
+	if err := json.Unmarshal(whitelistJSON, &Whitelist); err != nil {
 		return err
 	}
 	return nil

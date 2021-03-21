@@ -35,7 +35,6 @@
                 <th>Description</th>
             </tr>
         </thead>
-        {{if .whitelist}}
         {{range $ip, $authInfo := .whitelist}}
         <tbody>
             <tr>
@@ -45,7 +44,6 @@
                 <td>{{$authInfo.Description}}</td>
             </tr>
         </tbody>
-        {{end}}
         {{end}}
     </table>
     {{if .alert}}
