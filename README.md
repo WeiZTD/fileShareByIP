@@ -9,27 +9,27 @@
 
 ```fileShareByIP.exe  -dir="PATH/TO/DIR"```
 
-Show help message
+show help message
 
 ```-help,-?```
 
-Rirectory to share directory (Required)
+directory to share(Required)
 
 ```-dir="PATH/TO/DIR"```
 
-Allow users to upload file 
+allow users to upload file 
 
 ```-upd=true```
 
-Listen at specific port
+listen at specific port
 
 ```-p=number```
 
 ### Browse files and folders
 
-```ip:port/file```
+```@ip:port/file```
 
-```/``` will redirect to ```/file```
+```@ip:port/``` will redirect to ```@ip:port/file```
 
 ### Upload file
 
