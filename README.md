@@ -6,7 +6,7 @@
 
 # Usage
 
-## Host a read only server
+### Host a read only server
 
 ```fileShareByIP.exe -dir="PATH/TO/DIR"```
 
